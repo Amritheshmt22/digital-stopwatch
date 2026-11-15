@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Stopwatch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">Frontend practice project</p>
+      <h1 id="page-title">Digital Stopwatch</h1>
+      <p class="intro">Track time precisely, record laps and keep your best lap saved in this browser.</p>
+    </section>
+
+    <section class="stopwatch-card" aria-label="Stopwatch">
+      <div class="time-panel" aria-live="polite">
+        <span id="statusText" class="status-text">Ready</span>
+        <strong id="timeDisplay" class="time-display">00:00.00</strong>
+        <span class="time-caption">minutes : seconds . centiseconds</span>
+      </div>
+
+      <div class="controls" aria-label="Stopwatch controls">
+        <button id="startPauseButton" class="primary-button" type="button">Start</button>
+        <button id="lapButton" class="secondary-button" type="button" disabled>Lap</button>
+        <button id="resetButton" class="secondary-button" type="button" disabled>Reset</button>
+      </div>
+
+      <div class="shortcut-row">
+        <span><kbd>Space</kbd> start or pause</span>
+        <span><kbd>L</kbd> add lap</span>
+      </div>
+    </section>
+
+    <section class="stats-grid" aria-label="Stopwatch statistics">
+      <article class="stat-card">
+        <span class="stat-label">Laps</span>
+        <strong id="lapCount">0</strong>
+        <p>Recorded this run</p>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Last lap</span>
+        <strong id="lastLap">--:--.--</strong>
+        <p>Most recent split</p>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Best lap</span>
+        <strong id="bestLap">--:--.--</strong>
+        <p>Saved in this browser</p>
+      </article>
+    </section>
+
+    <section class="laps-card" aria-labelledby="laps-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Run details</p>
+          <h2 id="laps-title">Lap history</h2>
+        </div>
+        <span id="lapSummary">No laps yet</span>
+      </div>
+      <div id="emptyState" class="empty-state">Start the stopwatch and add a lap to see split times here.</div>
+      <ol id="lapsList" class="laps-list" reversed></ol>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
